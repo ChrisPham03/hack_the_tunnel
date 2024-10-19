@@ -1,80 +1,91 @@
 .Login {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  position: relative;
+}
+
+.Login__background {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100vh;
-  background-color: inherit;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  background-image: url("/carleton_background.jpg");
-  font-size: 0.9em;
+  height: 100%;
+  object-fit: cover; /* Cover the full background */
+  z-index: -1; /* Place behind other elements */
+}
 
-  &__panel {
-    width: 31.25rem;
-    height: 100vh;
-    background-color: white;
-    position: fixed;
-    top: 0;
-    right: 0;
+.Login__panel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
-    img {
-      padding-top: 5.625rem;
-      max-width: 100%;
-      margin-bottom: 3.75rem;
-    }
+.Login__box {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  border-radius: 16px;
+  padding: 60px; /* Increased padding */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Larger shadow */
+  z-index: 1; /* Keep the box above the background */
+  width: 500px; /* Bigger width for the panel */
+}
 
-    &__button {
-      border: none;
-      background-color: rgb(38, 114, 236);
-      color: rgb(255, 255, 255);
-      padding: 0.25rem 1.25rem 0.375rem 1.25rem;
-      cursor: pointer;
-      font-size: 0.9rem;
+.Login__box__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-      &:hover {
-        background: rgb(212, 227, 251);
-      }
-    }
+.Login__welcome {
+  text-align: center;
+  margin-bottom: 30px; /* More space below the welcome text */
+  font-size: 22px; /* Larger font size */
+  font-weight: bold; /* Bold text */
+}
 
-    &__content {
-      min-height: 100%;
-      height: auto;
-      margin: 0 auto 0 auto;
-      padding: 0rem 6.25rem 0rem 3.125rem;
+.Login__welcome--highlight {
+  color: red; /* Red color for the welcome text */
+}
 
-      &__message {
-        margin-bottom: 1.875rem;
-        font-size: 0.9em;
+.Login__instructions {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 16px; /* Regular font size for instructions */
+}
 
-        a {
-          color: #2672ec;
-          text-decoration: none;
-          background-color: transparent;
-          font-weight: bold;
-        }
-      }
+.Login__input input {
+  width: 100%;
+  padding: 16px; /* Bigger input box */
+  margin-bottom: 16px; /* Increased spacing between inputs */
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Slightly more rounded corners */
+  font-size: 18px; /* Larger text inside the input */
+}
 
-      &__input {
-        display: flex;
-        flex-direction: column;
-        gap: 0.625rem;
-        input {
-          width: 100%;
-          height: 28px;
-          padding: 0px 3px 0px 3px;
-          border: solid 1px #bababa;
-          font-size: 0.9rem;
-        }
-      }
+.Login__checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px; /* More space below checkbox */
+  font-size: 16px; /* Larger text size for the checkbox label */
+}
 
-      &__checkbox {
-        font-size: 0.9rem;
-        margin-top: 0.625rem;
-        margin-bottom: 2.375rem;
-        input {
-          margin: auto 0;
-          margin-right: 0.25rem;
-        }
-      }
-    }
-  }
+.Login__button {
+  width: 100%;
+  padding: 16px; /* Larger button */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px; /* Larger text inside the button */
+  font-weight: bold; /* Bold button text */
+}
+
+.Login__button:hover {
+  background-color: #0056b3;
 }

@@ -18,35 +18,37 @@ function Login() {
 
   return (
     <Layout>
-      <div className="Login"></div>
-      <div className="Login__panel">
-        <div className="Login__panel__content">
-          <img src="/carleton_logo_black.png"></img>
-          <div className="Login__panel__content__message">
-            <div>Welcome to the Carleton SSO Federated Portal.</div>
-            <div>
-              Enter your{" "}
-              <a href="https://myone.carleton.ca" target="blank">
-                MyCarletonOne
-              </a>{" "}
-              username and password.
+      <div className="Login">
+        <div className="Login__panel">
+          <div className="Login__panel__content">
+            <img src="Images/04Carleton.jpg" alt="Background" className="Login__background" />
+          </div>
+          <div className="Login__box">
+            <div className="Login__box__content">
+              <div className="Login__welcome Login__welcome--highlight">
+                Welcome to the Carleton 360
+              </div>
+              <div className="Login__instructions">
+                Enter your{" "}
+                <a href="https://myone.carleton.ca" target="_blank" rel="noopener noreferrer">
+                  MyCarletonOne
+                </a>{" "}
+                username and password.
+              </div>
+              {message && <p className="Login__message">{message}</p>}
+              <div className="Login__input">
+                <input type="text" placeholder="MyCarletonOne username" />
+                <input type="password" placeholder="Password" />
+              </div>
+              <div className="Login__checkbox">
+                <input type="checkbox" />
+                <label>Keep me signed in</label>
+              </div>
+              <button className="Login__button" onClick={attemptLogin}>
+                Sign In
+              </button>
             </div>
           </div>
-          {message && <p>{message}</p>}
-          <div className="Login__panel__content__input">
-            <input type="text" placeholder="MyCarletonOne username"></input>
-            <input type="password" placeholder="Password"></input>
-          </div>
-          <div className="Login__panel__content__checkbox">
-            <input type="checkbox"></input>
-            <label>Keep me signed in</label>
-          </div>
-          <button
-            className="Login__panel__button"
-            onClick={() => attemptLogin()}
-          >
-            Sign In
-          </button>
         </div>
       </div>
     </Layout>
