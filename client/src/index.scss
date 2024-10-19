@@ -8,3 +8,15 @@ body {
 
 $theme: #e91c24;
 $theme--dark: #cc0033;
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff;
+    color: #333;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #353333;
+    color: #ddd;
+  }
+}
