@@ -13,6 +13,10 @@ function WorksheetSection({
 }: WorksheetSectionProps) {
   return (
     <div className="WorksheetSection">
+      <form>
+        <label htmlFor="timetablename">Time Table Name: </label>
+        <input type="text" id="name" name="name" />
+      </form>
       <table>
         <thead>
           <tr>

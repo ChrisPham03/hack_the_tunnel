@@ -16,6 +16,7 @@ function BuildTimetable() {
   const { jwt } = useAccountContext();
   const [scheduledEvents, setScheduledEvents] = useState<ScheduledEvent[]>([]);
   const [selectedEvents, setSelectedEvents] = useState<ScheduledEvent[]>([]);
+  const[timetablename, setTimetablename] = useState("My Timetable");
   const navigate = useNavigate();
 
   const fetchScheduledEvents = async () => {
@@ -25,7 +26,7 @@ function BuildTimetable() {
 
   const createTimetable = async () => {
     const result = await ServiceAPI.createTimetable(
-      new Date().toISOString(),
+      timetablename,
       selectedEvents.map((event) => event.id.toString()),
       jwt,
     );
@@ -40,7 +41,9 @@ function BuildTimetable() {
   const removeEvent = (event: ScheduledEvent) => {
     setSelectedEvents(selectedEvents.filter((e) => e.id !== event.id));
   };
-
+  function nameTimeTable(e) {
+    setTimetablename(e.target.value);
+  }
   return (
     <Layout title={"My Course Worksheet"}>
       <div className="BuildTimetable">
@@ -55,6 +58,7 @@ function BuildTimetable() {
             />
           </Section>
         )}
+        <input type="text" id="timetablename" name="timetablename" value={timetablename} onChange={nameTimeTable}/>
         {selectedEvents.length > 0 && (
           <Section title="Worksheet">
             <WorksheetSection
