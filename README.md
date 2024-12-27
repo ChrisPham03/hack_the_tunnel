@@ -1,21 +1,20 @@
-# Hack The Tunnels - Starter 2024
+# Hack The Tunnels
 
 ![Hack The Tunnels](https://i.imgur.com/1NCyXkn.png)
 
-This is the project template for [Hack The Tunnels](https://ccss.carleton.ca/hackthetunnels/).
+This is the project using a template for [Hack The Tunnels](https://ccss.carleton.ca/hackthetunnels/).
 
 The project template utilizes [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Express](https://expressjs.com/), and [Prisma](https://www.prisma.io/).
 
 ## Table of Contents
-
-- [Event Setup Instructions](#event-setup-instructions)
-    - [Windows Setup](#windows-setup)
-    - [Mac Setup](#mac-setup)
-    - [Project Setup](#project-setup)
-        - [Create a Github Repository for the Project](#create-a-github-repository-for-the-project)
-        - [Client Setup](#client-setup)
-        - [Service Setup](#service-setup)
-- [Documentation](#documentation)
+- [Improvements](#improvements)
+  - [Challenges](#challenges)
+    - [Frontend](#frontend)
+    - [Backend](#backend)
+    - [Fullstack](#fullstack)
+    - [Security](#security)
+    - [Diagrams](#diagrams)
+  - [Photos](#photos)
     - [Important Files and Folders](#important-files-and-folders)
         - [Client](#client)
         - [Service](#service)
@@ -39,165 +38,56 @@ The project template utilizes [React](https://react.dev/), [TypeScript](https://
         - [Timetable Event](#timetable-event)
     - [Workshops](#workshops)
         - [React Workshop](#react-workshop)
+# Improvements
 
-# Event Setup Instructions
+## Challenges
 
-To avoid many of the environment setup-related issues that occur with Windows, we will be having all [Hack The Tunnels 2024](https://ccss.carleton.ca/hackthetunnels/) participants set up [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/about).
+### Frontend
+- [x] Hello World: Update Page Title
+- [x] Create Your Own Login Page
+- [x] Save Timetable Name
+- [x] Update Central Layout
+- [x] Redesign 404 Page
+- [x] Improve Timetable Styling
+- [x] Improve Search Result Styling
+- [x] Dark Mode
+### Backend
+- [ ] Prevent Overlapping Events
+- [x] Add Max Registration Column to Scheduled Events
+- [ ] Send Email On Timetable Create
+- [x] Generate Recurring Report
+- [ ] Course Data Web Scraper
+- [x] Send Discord Webhook
+- [ ] Send Text When Timetable Created
+- [ ] Create a GraphQL API  
+### Fullstack
+- [x] Search By Program
+- [ ] Course Recommendation
+- [x] Search Course by CRN
+- [ ] Scheduled Event Page With Redis
+- [ ] Course Elastic Search
+### Security
+- [x] Move JWT Secret to .env
+- [ ] Bcrypt Passwords
+### Diagrams
+- [ ] Sequence Diagram
+- [ ] Entity Relationship Diagram 
+# Photos
+Login Page
 
-If you are a Windows user, you should follow the [Windows Setup](#windows-setup) and then follow the [Project Setup](#project-setup) in your new WSL environment.
+![Login Page](ResultImg/HomePage.png)
+Home Page
 
-If you are a Mac or Linux user, instead follow the [Mac Setup](#mac-setup) and then follow the [Project Setup](#project-setup) instructions.
+![Home Page](ResultImg/Carleton360Page.png)
+TimeTable
 
-Both guides will have you set up [Homebrew](https://brew.sh/) to manage dependencies. Homebrew will help you install additional software like Node.js, Git, Gh, etc.
+![TimeTable](ResultImg/TimeTable.png)
+Class Searching
 
+![Class Searching](ResultImg/ClassSearch.png)
+404 Page
 
-## Windows Setup
-In Powershell or Command Prompt, run the following commands
-
-1. Install WSL
-
-```
-wsl --install
-```
-
-2. Set WSL to use version 2 as the default.
-
-```
-wsl --set-default-version 2
-```
-
-3. Install the Ubuntu distribution within WSL.
-
-```
-wsl --install -d ubuntu
-```
-**Note: You will need to create a Linux user**
-
-4. Install Homebrew
-
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-5. Follow the on-screen instructions to add Homebrew to your PATH.
-
-```
-(This will be instructions displayed after the Homebrew installation)
-```
-
-6. Refresh your terminal session to apply the changes made to .bashrc
-
-```
-source ~/.bashrc
-```
-
-7. Install Node.js
-
-```
-brew install node
-```
-
-8. Install Git
-
-```
-brew install git
-```
-
-## Mac Setup
-In the Terminal, run the following commands
-
-1. Install Homebrew
-
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-2. Install Node.js
-
-```
-brew install node
-```
-
-3. Install Git
-
-```
-brew install git
-```
-
-## Project Setup
-
-### Create a Github Repository for the Project 
-
-For each team, one member should create the repository and all members of a team should clone the same repository
-
-Click on "Use this template" > Create a new repository
-
-![image](https://github.com/user-attachments/assets/ccefc342-83b2-4258-aa73-bc061358008a)
-
-In your WSL terminal (for Windows) or the terminal (for Mac), run the following commands
-
-1. Clone the repository
-
-```
-git clone https://github.com/your-github-username/your-repository-name.git
-```
-
-2. Move into the project directory
-
-```
-cd your-repository-name
-```
-
-### Client Setup
-
-1. Move into the client directory
-
-```
-cd client
-```
-
-2. Install client dependencies
-
-```
-npm install
-```
-
-3. Run the client
-
-```
-npm run dev
-```
-
-### Service Setup
-
-Follow the following instructions in a 2nd terminal while your client is running.
-
-1. Move into the service directory
-
-```
-cd service
-```
-
-2. Install service dependencies
-
-```
-npm install
-```
-
-3. Run Migrations
-
-```
-npx prisma migrate dev
-```
-
-4. Run the service
-
-```
-npm run dev
-```
-
-To get the project working, you will need to have both the client and server running.
-
+![404 Page](ResultImg/404.png)
 # Documentation
 
 The project template for this year is a recreation of the **infamously hard to use Carleton Central**.
